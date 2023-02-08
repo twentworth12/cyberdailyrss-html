@@ -11,7 +11,7 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 
 const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
+const __dirname = path.dirname(__filename);
 
 app.set('port', (process.env.PORT || 5000))
 app.use(express.static(__dirname + '/public'))
