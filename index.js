@@ -30,17 +30,6 @@ fetch("https://therecord.media/feed")
 	  
 	  html += `<h2><span style="font-size: 18px; color: #3366ff;"><a href='${item.link}' style="color:#3366ff" >${item.title}<img width="600" src="${imgsrc}"></a></span></h2><p style="margin-bottom: 1em;">${item.contentSnippet}</p></code></pre></blockquote>`;
 
-	  html = str => str.replace(/[&<>'"]/g, 
-  tag => ({
-      '&': '&amp;',
-      '<': '&lt;',
-      '>': '&gt;',
-      "'": '&#39;',
-      '"': '&quot;'
-    }[tag]));
-	    
-	    
-    });
 
     response.send(html)
     //console.log(html);
