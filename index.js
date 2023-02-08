@@ -16,6 +16,10 @@ app.use(express.static(__dirname + '/public'))
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
+let  __filename = "";
+let __dirname = "";
+
+
 app.get('/', function(request, response) {
 
 
