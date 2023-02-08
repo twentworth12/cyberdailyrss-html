@@ -8,12 +8,6 @@ let RSSparser = new Parser();
 
 var HTMLParser = require('node-html-parser');
 
-import path from 'path';
-import { fileURLToPath } from 'url';
-
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-
 app.set('port', (process.env.PORT || 5000))
 app.use(express.static(__dirname + '/public'))
 
