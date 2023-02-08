@@ -23,7 +23,7 @@ fetch("https://therecord.media/feed")
     feed.items.forEach(item => {
     
 
-	const root = parse(item.content);
+	const root = HTMLParser(item.content);
 	let imgsrc = root.querySelector('img').getAttribute('src');
 	// console.log(imgsrc);
 	  
