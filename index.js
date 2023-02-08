@@ -10,6 +10,9 @@ import { parse } from 'node-html-parser';
 import path from 'path';
 import { fileURLToPath } from 'url';
 
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+
 app.set('port', (process.env.PORT || 5000))
 app.use(express.static(__dirname + '/public'))
 
@@ -21,8 +24,6 @@ fetch("https://therecord.media/feed")
   .then(res => res.text())
   .then(async body => {
   
-   const __filename = fileURLToPath(import.meta.url);
-   const __dirname = dirname(__filename);
 	
     const feed = await RSSparser.parseString(body);
         
