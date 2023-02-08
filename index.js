@@ -10,6 +10,8 @@ var HTMLParser = require('node-html-parser');
 
 const Entities = require('html-entities');
 
+const prettify = require('html-prettify');
+
 app.set('port', (process.env.PORT || 5000))
 app.use(express.static(__dirname + '/public'))
 
@@ -34,7 +36,7 @@ fetch("https://therecord.media/feed")
 	    
     });
 
-    response.send(Entities.encode(html))
+    response.send(Entities.encode(prettify(html)))
     //console.log(html);
     
   });
