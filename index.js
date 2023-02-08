@@ -29,9 +29,13 @@ fetch("https://therecord.media/feed")
 	// console.log(imgsrc);
 	  
 	  html += `<h2><span style="font-size: 18px; color: #3366ff;"><a href='${item.link}' style="color:#3366ff" >${item.title}<img width="600" src="${imgsrc}"></a></span></h2><p style="margin-bottom: 1em;">${item.contentSnippet}</p></code></pre></blockquote>`;
+ 
+    });
 
     response.send(html)
     //console.log(html);
+    
+  });
 	
 	
 })
