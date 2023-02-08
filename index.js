@@ -13,13 +13,6 @@ import { fileURLToPath } from 'url';
 app.set('port', (process.env.PORT || 5000))
 app.use(express.static(__dirname + '/public'))
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-
-let  __filename = "";
-let __dirname = "";
-
-
 app.get('/', function(request, response) {
 
 
@@ -27,7 +20,10 @@ app.get('/', function(request, response) {
 fetch("https://therecord.media/feed")
   .then(res => res.text())
   .then(async body => {
-  	
+  
+   const __filename = fileURLToPath(import.meta.url);
+   const __dirname = path.dirname(__filename);
+	
     const feed = await RSSparser.parseString(body);
         
     let html = "";
