@@ -19,7 +19,8 @@ fetch("https://therecord.media/feed")
   	
     const feed = await RSSparser.parseString(body);
         
-    let html = "";
+    let html = "<blockquote><pre><code>";
+	
     feed.items.forEach(item => {
     	    
 	var root = HTMLParser.parse(item.content);
@@ -27,7 +28,8 @@ fetch("https://therecord.media/feed")
 	let imgsrc = root.querySelector('img').getAttribute('src');
 	// console.log(imgsrc);
 	  
-	  html += `<h2><span style="font-size: 18px; color: #3366ff;"><a href='${item.link}' style="color:#3366ff" >${item.title}<img width="600" src="${imgsrc}"></a></span></h2><p style="margin-bottom: 1em;">${item.contentSnippet}</p>`;
+	  html += `<h2><span style="font-size: 18px; color: #3366ff;"><a href='${item.link}' style="color:#3366ff" >${item.title}<img width="600" src="${imgsrc}"></a></span></h2><p style="margin-bottom: 1em;">${item.contentSnippet}</p></code></pre></blockquote>`;
+ 
     });
 
     response.send(html)
