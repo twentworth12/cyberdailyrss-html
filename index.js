@@ -3,9 +3,6 @@ var app = express();
 
 const fetch = require('cross-fetch');
 
-var RSSParser = require('rss-parser');
-const RSSparser = new RSSParser();
-
 let Parser = require('rss-parser');
 let RSSparser = new Parser();
 
