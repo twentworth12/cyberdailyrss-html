@@ -1,3 +1,5 @@
+// this code turns an RSS feed into simple HTML suitable to be cut+pasted into Hubspot
+
 var express = require('express')
 var app = express();
 
