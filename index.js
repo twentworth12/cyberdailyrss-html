@@ -34,7 +34,7 @@ fetch("https://therecord.media/feed")
 	let imgsrc = root.querySelector('img').getAttribute('src');
 	// console.log(imgsrc);
 	  
-	  html += `<html><h2><span style="font-size: 18px; color: #3366ff;"><a href='${item.link}' style="color:#3366ff" >${item.title}</a></span></h2><img width="600" src="${imgsrc}"><p style="margin-bottom: 1em;">${item.contentSnippet}</p></html>`;
+	  html += `<html><body><h2><span style="font-size: 18px; color: #3366ff;"><a href='${item.link}' style="color:#3366ff" >${item.title}</a></span></h2><img width="600" src="${imgsrc}"><p style="margin-bottom: 1em;">${item.contentSnippet}</p></body></html>`;
 	    
     });
 
