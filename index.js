@@ -4,14 +4,11 @@ var express = require('express')
 var app = express();
 
 const fetch = require('cross-fetch');
-
 let Parser = require('rss-parser');
 let RSSparser = new Parser();
 
 var HTMLParser = require('node-html-parser');
-
 const Entities = require('html-entities');
-
 const prettify = require('html-prettify');
 
 app.set('port', (process.env.PORT || 5000))
@@ -32,8 +29,8 @@ fetch("https://therecord.media/feed")
 	var root = HTMLParser.parse(item.content);
 
 	let imgsrc = root.querySelector('img').getAttribute('src');
-	// console.log(imgsrc);
-	  
+
+	  // Build the HTML for Cyber Daily
 	  html += `<h2><span style="font-size: 18px; color: #3366ff;"><a href='${item.link}' style="color:#3366ff" >${item.title}</a></span></h2><img width="600" src="${imgsrc}"><p style="margin-bottom: 1em;">${item.contentSnippet}</p>`;
 	    
     });
